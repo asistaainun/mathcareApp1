@@ -12,6 +12,8 @@
 }
 
 .header-container {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
@@ -28,6 +30,7 @@
   letter-spacing: -0.5px;
   text-shadow: 0 1px 2px rgba(46, 125, 50, 0.1);
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .logo-button:hover {
@@ -36,14 +39,8 @@
 }
 
 .desktop-nav {
-  display: none;
+  display: flex;
   gap: 2rem;
-}
-
-@media (min-width: 768px) {
-  .desktop-nav {
-    display: flex;
-  }
 }
 
 .nav-link {
@@ -55,6 +52,7 @@
   font-weight: 500;
   padding-bottom: 2px;
   border-bottom: 2px solid transparent;
+  cursor: pointer;
 }
 
 .nav-link:hover {
@@ -81,6 +79,10 @@
   transition: all 0.3s ease;
   padding: 0.5rem;
   border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .icon-button:hover {
@@ -90,16 +92,21 @@
 }
 
 .mobile-menu-button {
-  display: block;
+  display: none;
   background: none;
   border: none;
   color: #43A047;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-@media (min-width: 768px) {
-  .mobile-menu-button {
+@media (max-width: 768px) {
+  .desktop-nav {
     display: none;
+  }
+  
+  .mobile-menu-button {
+    display: block;
   }
 }
 
@@ -122,6 +129,8 @@
 }
 
 .mobile-nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -136,6 +145,7 @@
   color: #43A047;
   transition: all 0.3s ease;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .mobile-nav-link:hover {
@@ -147,10 +157,4 @@
   color: #1B5E20;
   font-weight: 700;
   background-color: #DCEDC8;
-}
-
-@media (min-width: 768px) {
-  .mobile-nav {
-    display: none;
-  }
 }

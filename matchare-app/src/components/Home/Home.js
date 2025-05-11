@@ -10,7 +10,7 @@ const Home = ({ navigateTo, openProductDetail, openIngredientDetail }) => {
       <div className="hero-section">
         <div className="hero-content">
           <h1 className="hero-title">Find your perfect skincare match</h1>
-          <p className="hero-subtitle">Discover personalized skincare recommendations based on science, not hype. Let our AI-powered system analyze your unique skin needs.</p>
+          <p className="hero-subtitle">Temukan skincare sesuai kebutuhan kulitmu!</p>
           <button 
             onClick={() => navigateTo('quiz')} 
             className="hero-button"
@@ -67,7 +67,7 @@ const Home = ({ navigateTo, openProductDetail, openIngredientDetail }) => {
               onClick={() => openProductDetail(product)}
             >
               <div className="product-image-container">
-                <img src={product.image} alt={product.name} className="product-image" />
+                <div className="product-image">Product Image</div>
                 {product.matchScore > 90 && (
                   <div className="match-badge">
                     {product.matchScore}% Match
@@ -111,15 +111,19 @@ const Home = ({ navigateTo, openProductDetail, openIngredientDetail }) => {
               <p className="concern-description">{concern.description}</p>
               <div className="ingredients-preview">
                 {concern.recommendedIngredients.slice(0, 2).map((ing, idx) => (
-                  <span key={idx} className="ingredient-tag" onClick={(e) => {
-                    e.stopPropagation();
-                    const matchingIngredient = MOCK_DATA.ingredients.find(
-                      ingredient => ingredient.name === ing
-                    );
-                    if (matchingIngredient) {
-                      openIngredientDetail(matchingIngredient);
-                    }
-                  }}>
+                  <span 
+                    key={idx} 
+                    className="ingredient-tag" 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      const matchingIngredient = MOCK_DATA.ingredients.find(
+                        ingredient => ingredient.name === ing
+                      );
+                      if (matchingIngredient) {
+                        openIngredientDetail(matchingIngredient);
+                      }
+                    }}
+                  >
                     {ing}
                   </span>
                 ))}

@@ -7,7 +7,7 @@ const Header = ({ currentPage, navigateTo }) => {
 
   return (
     <header className="header sticky-header">
-      <div className="container header-container">
+      <div className="header-container">
         <button onClick={() => navigateTo('home')} className="logo-button">matchare</button>
         
         {/* Desktop Navigation */}
